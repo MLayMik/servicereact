@@ -33,8 +33,8 @@ function App() {
   const countDone = tasks.filter(task => task.isChecked).length
 
   return (
-    <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-screen flex justify-center items-end ">
-      <div className="bg-white p-6 min-w-[500px] rounded-3xl mb-[20%]">
+    <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-screen flex justify-center lg:items-end items-center ">
+      <div className="bg-white p-6 w-full sm:w-auto sm:min-w-[300px] md:min-w-[400px] lg:min-w-[500px] rounded-3xl lg:mb-[20%]">
         <div className="flex justify-between gap-5">
           <p className="">
             Done:
