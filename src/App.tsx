@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Form from './components/Form'
 import TaskPart from './components/TaskPart'
 
@@ -9,6 +9,19 @@ interface Task {
 }
 function App() {
   const [tasks, setTasks] = useState<Task[]>([])
+
+  useEffect(() => {
+    const data = localStorage.getItem('task_storage')
+    if (data) {
+      setTasks(JSON.parse(data))
+    }
+  }, [])
+
+  useEffect(() => {
+    if (tasks.length > 0) {
+      localStorage.setItem('task_storage', JSON.stringify(tasks))
+    }
+  }, [tasks])
 
   const addTask = (taskName: string) => {
     const newTask = {
